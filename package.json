@@ -1,0 +1,23 @@
+{
+  "name": "angular-finiq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdityaBhong/angular-finiq.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdityaBhong/angular-finiq/issues"
+  },
+  "homepage": "https://github.com/AdityaBhong/angular-finiq#readme",
+  "dependencies": {
+    "aditya-finiq-package-demo": "^1.0.0"
+  }
+}

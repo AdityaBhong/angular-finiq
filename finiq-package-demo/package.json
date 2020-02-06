@@ -1,0 +1,15 @@
+{
+  "name": "aditya-finiq-package-demo",
+  "version": "1.0.0",
+  "description": "Dummy pack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dummy",
+    "text"
+  ],
+  "author": "",
+  "license": "ISC"
+}
