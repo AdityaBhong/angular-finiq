@@ -1,0 +1,27 @@
+.card .card-content {
+    height: 165px;}
+
+    .white{
+        padding-bottom: 85px;
+        padding-top: 20px;
+    }
+    
+    .teal-text.text-lighten-2 {
+        color: #fee5fe !important;
+    }
+    
+    .products{
+        font-size: 30px;
+        padding-left: 11px;
+        text-align: center;
+    }
+    .card .card-title {
+        color: white;}
+    
+        .card .card-content {
+           
+            color: #585858;
+        }
+    
+        .light {
+            color: white;}

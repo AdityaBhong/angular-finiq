@@ -1,0 +1,36 @@
+<div class="row">
+    <div *ngFor="let book of books">
+    <div class="col s12 m3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" height="240" width="150" [src]="book.imgSrc">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{{book.bookName | titlecase}}<i class="material-icons right">more_vert</i></span>
+              <p>MRP: {{book.price | currency : "INR"}}</p>
+              <p>Discounted Price: {{book.price | discount: book.discount | currency : "INR"}}</p>
+              <p>Quantity: {{book.quantity}}</p>
+              <p style="color: green;" *ngIf="book.inStock=='Y'; else outOfStock">
+                In stock 
+              </p>
+              <ng-template #outOfStock>
+                <p style='color: red;'>Out of stock!</p>
+              </ng-template>
+              <!-- <p>
+                <button type=ss"button" class="btn btn-success">Buy</button>
+              </p> -->
+            </div>
+            <div class="card-reveal">
+              <span class="card-title">Author: {{book.author}}<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+            <div class="card-action">
+              <app-like [LikesCount]="tweet.likesCount" [isActive]="tweet.isLiked">
+              </app-like>
+              <i class="fa fa-trash" aria-hidden="true" style="float: right;" (click)="OnRemove(book)"></i>
+            </div>
+          </div>
+    </div>
+  </div>
+  </div>
+  

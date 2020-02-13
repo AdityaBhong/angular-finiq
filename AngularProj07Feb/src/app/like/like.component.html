@@ -1,0 +1,14 @@
+<!-- <h1>{{desc}}</h1> -->
+
+<i class="fa fa-heart-o" 
+[ngClass]="
+{
+    'fa-heart': isActive,
+    'fa-heart-o': !isActive
+}
+"
+(click)="OnClick()"
+>
+</i>
+
+<!-- <span style="padding-left: 10px;">{{likesCount}}</span> -->

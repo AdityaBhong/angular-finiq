@@ -1,0 +1,60 @@
+<p class="products">Products Section</p>
+        <ul>
+            <li *ngFor="let prd of fnqProducts">
+                <div class="col s12 m3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src={{prd.imgSrc}}>
+                        <span class="card-title">{{prd.pName}}</span>
+                      </div>
+                      <div class="card-content">
+                        <p [style.color]="prd.pColor">{{prd.pName}}</p>
+                        <p>Product Code:    {{prd.aClass}}</p>
+                        
+                        <!-- <p *ngIf="prd.availableForPurchase=='Y'; then forPurchase else notForPurchase">
+                        </p>
+                        <ng-template #forPurchase>
+                          Product is available for purchase.     
+                        </ng-template>
+                        <ng-template #notForPurchase>
+                         Product isn't available for purchase.
+                        </ng-template>
+                        <br>                         -->
+                       
+
+                        <p>Country:
+                        <i class="abc" [ngSwitch]="prd.country">
+                          <img 
+                          *ngSwitchCase="'India'"
+                          src="../../../assets/Flags_New/INR.png" />  
+
+                          <img 
+                          *ngSwitchCase="'Malaysia'"
+                          src="../../../assets/Flags_New/MYR.png" /> 
+                          
+                          <img 
+                          *ngSwitchCase="'Singapore'"
+                          src="../../../assets/Flags_New/SGD.png" />  
+
+                          <img 
+                          *ngSwitchCase="'Japan'"
+                          src="../../../assets/Flags_New/JPY.png" />  
+
+                          <img 
+                          *ngSwitchDefault
+                          src="../../../assets/Flags_New/INR.png" />  
+                        </i></p>
+
+                        <p *ngIf="prd.isOnline=='Y'">
+                          Online Status:
+                          <img height="25" width="25" style="vertical-align: bottom;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAjVBMVEX///9j3oBh6YFg7IJk2oBh54Fi5IFi4oFj3IBg74L8//35/vpW7ntc73/f++TO+Ndy4YxZ3Hlc2Xqj7bNX4nnf+OTX+9+z9cGc9K6I8qB28ZJs8Ivq/e578ZZK7XPK+dSm9be388RL5HKG6p2b66x85ZSn6baE4Zm57MRO1nCN46B735J/7ZfC981v54scy+vkAAAC7ElEQVRoge2Z63KqMBCA8XAQhYRLRGlRVNBaLdr3f7wTjJzhbmiWdqaz3x8VMvnYzQYw0TQEQRAEQRAEQRAE+Q1YNsf6Ae8qfHmN1rq+jl5fwtU3XsEmjLdbQimdc/gH2W7jcPMt6l1MyF1bhhIS78Y2W7s1bZgffrrejZp+J24GXQ7/6ozn3vephX4/ktqOSL86h0T2GG6HzHUJ5mSE1LtzKTe3z11wN5V0czsFtjvS6rseNPO23Hj/lxPIqosGubk9gnPvyTC3rsPNd4cOdes6BRp26zow6TnzK8x9fkf+fAEC85CL9K/IdZCac6m8sPwD5FZzlQ6cVpvG6u5NKu2+aYdylqj6m1Uim/U04a0PpdhpoiyPJbN+d2uLUmtdOe9WakiR3vLWx0rrVHWqr+Tkwv0SVA+uFOVh0KGrau4539faBqGi/Cgj18V415MUHBXlBwm3iLDhNoyDmtvyjOkzAhF30DhheGoVZ39W5UFTkXa5p8an2guNbdaCdOuSzrg5JqTc4KJzVSPGO2x1K8s/y+63/FDFLtxJu3uqmPZqwYm5U7L3xq1ccNqhmuS7fVfI+sY7R3GqacepWaawix8Pt9nBVPUmk9S6FvZbfrQY7y734+IUcOp9B4uHUnw5d7vNQPX12UobXQp7WlxEN8qPVO1tUkfYHeFunC3xpurWEr/RqV8U0ql5rtxM/TVq0yLwF13XVWkFsDR3MJv9Xk5aXmu9blM96/xPQ1t8wemZe+KDrE94rV2/9+d8MvEg3O2hPwUmcM3K2HA3y4CWQpdfCN1fwrifzedW9wnKzWuOzQbBYKpNYPvD5D7oAuxyUOgMbMAFK/ZXGqb6H03BDu/OJ9xMRj2Dm2RlbE8ieOaNstjPObEnwc8Y4Pyus3zvy/3Mfx8l5QWW63VFz+8s7ug7i27GWsaesQx8d6OVzTm7+KzIwIwx/5Kdv2c7U+Aki4/M42Qfi2TErbxOfmoLG0EQBEEQBEEQBEFG4B8v6lAJ6lh+6AAAAABJRU5ErkJggg==">
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <app-like [LikesCount]="tweet.likesCount" [isActive]="tweet.isLiked">
+                        </app-like>
+                      </div>
+                    </div>
+                  </div>                
+            </li>
+        </ul>
