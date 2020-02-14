@@ -1,3 +1,5 @@
+<p class="products">Books Section (Total Books {{getBooksCount()}})</p>
+<h1 appHost>Hello Host</h1>
 <div class="row">
     <div *ngFor="let book of books">
     <div class="col s12 m3">
@@ -14,7 +16,7 @@
                 In stock 
               </p>
               <ng-template #outOfStock>
-                <p style='color: red;'>Out of stock!</p>
+                <p class="appFirst">Out of stock!</p>
               </ng-template>
               <!-- <p>
                 <button type=ss"button" class="btn btn-success">Buy</button>

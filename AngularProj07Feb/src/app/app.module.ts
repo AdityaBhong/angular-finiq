@@ -15,6 +15,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MobPartsComponent } from './products/mob-parts/mob-parts.component';
 import { BooksComponent } from './products/books/books.component';
 import { SqrtPipe } from './pipes/sqrt.pipe';
+import { FirstDirective } from './directives/first.directive';
+import { HostDirective } from './directives/host.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { SqrtPipe } from './pipes/sqrt.pipe';
     FooterComponent,
     MobPartsComponent,
     BooksComponent,
-    SqrtPipe
+    SqrtPipe,
+    FirstDirective,
+    HostDirective
   ],
   imports: [
     BrowserModule,
