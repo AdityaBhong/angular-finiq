@@ -1,7 +1,7 @@
 import { BOOKS } from './mock';
 import { Books } from './books';
 
-import { Component,SimpleChanges } from '@angular/core';
+import { Component,SimpleChanges, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-books',
@@ -10,7 +10,10 @@ import { Component,SimpleChanges } from '@angular/core';
 })
 
 export class BooksComponent {
-  
+
+  @Input() title_ch:string;
+  @Output() title_op:string="From Child..."; 
+
   books: Books[];
   tweet;
   test: string;
@@ -51,6 +54,12 @@ export class BooksComponent {
     console.log('AfterViewInit executed');
   }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    console.log('On Destroy Executed..!!');
+  }
+
   OnRemove(book)
   {
     let index=this.books.indexOf(book);
@@ -67,5 +76,29 @@ export class BooksComponent {
     }
 
     return bookCount;
+  }
+
+  removeQuantity(book)
+  {
+    if(book.pQuantity !=0) book.pQuantity--;
+  }
+
+  addQuantity(book)
+  {
+    if(book.pQuantity < book.quantity)
+    {
+        book.pQuantity++;
+    }      
+  }
+
+  attrQuantity(text,book)
+  {
+    console.clear();
+    console.log(text);
+    if(text>book.quantity)     
+      alert("Enter lesser quatity.");
+    else
+      book.pQuantity=text;
+    
   }
 }

@@ -16,7 +16,6 @@ export class MobPartsComponent {
       pColor: "red",
       isOnline:"N",
       country: "India",
-      countryStyle:""
     },
     {
       pName: "Mutual Funds",

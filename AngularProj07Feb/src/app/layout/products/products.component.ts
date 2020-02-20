@@ -13,4 +13,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent  {
 
+   title1="From Parent...";
 }

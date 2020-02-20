@@ -8,4 +8,5 @@ export class Books
     inStock:string;
     price: number;
     discount: number;
+    pQuantity:number;
 }

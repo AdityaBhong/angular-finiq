@@ -1,9 +1,13 @@
 <p class="products">Books Section (Total Books {{getBooksCount()}})</p>
-<h1 appHost>Hello Host</h1>
+<h1 class="appHost">Hello Host</h1>
+
+<p>{{title_ch}}</p>
+
 <div class="row">
     <div *ngFor="let book of books">
     <div class="col s12 m3">
-        <div class="card">
+        <div class="card" >
+          <!-- [class.card-color]="book.pQuantity" -->
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" height="240" width="150" [src]="book.imgSrc">
             </div>
@@ -18,9 +22,19 @@
               <ng-template #outOfStock>
                 <p class="appFirst">Out of stock!</p>
               </ng-template>
-              <!-- <p>
-                <button type=ss"button" class="btn btn-success">Buy</button>
-              </p> -->
+              <p *ngIf="book.quantity>0;else noAvailableBooks">
+                <a class="waves-effect waves-light btn" (click)="removeQuantity(book)"><i class="material-icons">remove</i></a>
+                <!-- {{book.pQuantity}} -->
+
+                <input id="myTextBox" [value]="book.pQuantity"  (input)="attrQuantity($event.target.value,book)">
+                <!-- <input [(ngModel)]="book.pQuantity" [class.clsName]="true"/> -->
+                <!-- *ngIf="$event.target.value>book.quantity;then alert(hello)" -->
+                <a class="waves-effect waves-light btn" (click)="addQuantity(book)"><i class="material-icons">add</i></a>
+              </p>
+              <ng-template #noAvailableBooks>
+              <p>
+              </p>
+              </ng-template>
             </div>
             <div class="card-reveal">
               <span class="card-title">Author: {{book.author}}<i class="material-icons right">close</i></span>
@@ -29,7 +43,7 @@
             <div class="card-action">
               <app-like [LikesCount]="tweet.likesCount" [isActive]="tweet.isLiked">
               </app-like>
-              <i class="fa fa-trash" aria-hidden="true" style="float: right;" (click)="OnRemove(book)"></i>
+              <i class="fa fa-trash" aria-hidden="true" style="float: right;" (click)="OnRemove(book)"></i>             
             </div>
           </div>
     </div>

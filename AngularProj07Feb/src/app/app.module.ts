@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LikeComponent } from './like/like.component';
@@ -17,6 +19,11 @@ import { BooksComponent } from './products/books/books.component';
 import { SqrtPipe } from './pipes/sqrt.pipe';
 import { FirstDirective } from './directives/first.directive';
 import { HostDirective } from './directives/host.directive';
+
+const appRoutes:Routes=[
+  {path: 'products', component:MobPartsComponent},
+  {path: 'books',component:BooksComponent}
+];
 
 @NgModule({
   declarations: [
@@ -37,7 +44,9 @@ import { HostDirective } from './directives/host.directive';
   ],
   imports: [
     BrowserModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

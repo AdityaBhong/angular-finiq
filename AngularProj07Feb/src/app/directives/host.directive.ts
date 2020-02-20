@@ -1,7 +1,7 @@
 import { Directive,ElementRef,Renderer,HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appHost]'
+  selector: '.appHost'
 })
 export class HostDirective {
 
