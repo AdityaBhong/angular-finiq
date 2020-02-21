@@ -2,11 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { LikeComponent } from './like/like.component';
-
 import { NavComponent } from './layout/nav/nav.component';
 import { BannerOneComponent } from './layout/banner-one/banner-one.component';
 import { ProductsComponent } from './layout/products/products.component';
@@ -19,11 +18,11 @@ import { BooksComponent } from './products/books/books.component';
 import { SqrtPipe } from './pipes/sqrt.pipe';
 import { FirstDirective } from './directives/first.directive';
 import { HostDirective } from './directives/host.directive';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
+import { HomeComponent } from './layouts/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes:Routes=[
-  {path: 'products', component:MobPartsComponent},
-  {path: 'books',component:BooksComponent}
-];
+
 
 @NgModule({
   declarations: [
@@ -40,13 +39,15 @@ const appRoutes:Routes=[
     BooksComponent,
     SqrtPipe,
     FirstDirective,
-    HostDirective
+    HostDirective,
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
