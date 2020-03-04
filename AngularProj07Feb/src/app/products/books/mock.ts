@@ -5,7 +5,7 @@ export const BOOKS: Books[]=[
       bookId:1,
       bookName: 'Fixed Income',
       author: 'F J Fabozzi',
-      quantity: 100,
+      quantity: 300,
       imgSrc: 'https://images-na.ssl-images-amazon.com/images/I/51sW49-uQGL._SX329_BO1,204,203,200_.jpg'
       ,inStock:'Y'
       ,price: 1500

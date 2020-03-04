@@ -1,3 +1,9 @@
+import { AuthGuard } from './auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { ProdNavMenuComponent } from './products/mob-parts/prod-nav-menu/prod-nav-menu.component';
+import { CallableBondsComponent } from './products/mob-parts/callable-bonds/callable-bonds.component';
+import { GovernmentBondsComponent } from './products/mob-parts/government-bonds/government-bonds.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
@@ -11,8 +17,29 @@ import { BooksComponent } from './products/books/books.component';
 const appRoutes:Routes=[
   {path: '',component:HomeComponent},
   {path: 'home',component:HomeComponent},
-  {path: 'products', component:MobPartsComponent},
   {path: 'books',component:BooksComponent},
+  {path: "login", component: LoginComponent},
+  {path: 'dashboard',
+   canActivate: [AuthGuard],
+   component:DashboardComponent,
+  },
+  {path: 'products', component:ProdNavMenuComponent,
+  children:[
+    {
+      path: "",
+      component:MobPartsComponent
+    },
+    {
+      path: 'govbonds',
+      component:GovernmentBondsComponent
+    },
+    {
+      path:'callbonds',
+      component:CallableBondsComponent
+    }
+  ]
+  },
+ 
   {path: '**',component:PageNotFoundComponent}
 ];
 

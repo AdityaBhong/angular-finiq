@@ -1,8 +1,10 @@
+import { AuthGuard } from './auth.guard';
+import { BooksService } from './services/books.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LikeComponent } from './like/like.component';
@@ -21,6 +23,13 @@ import { HostDirective } from './directives/host.directive';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 import { HomeComponent } from './layouts/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { GovernmentBondsComponent } from './products/mob-parts/government-bonds/government-bonds.component';
+import { CallableBondsComponent } from './products/mob-parts/callable-bonds/callable-bonds.component';
+import { ProdNavMenuComponent } from './products/mob-parts/prod-nav-menu/prod-nav-menu.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TempComponent } from './forms/temp/temp.component';
+import { ReactComponent } from './forms/react/react.component';
 
 
 
@@ -41,15 +50,24 @@ import { AppRoutingModule } from './app-routing.module';
     FirstDirective,
     HostDirective,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    GovernmentBondsComponent,
+    CallableBondsComponent,
+    ProdNavMenuComponent,
+    LoginComponent,
+    DashboardComponent,
+    TempComponent,
+    ReactComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [BooksService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
