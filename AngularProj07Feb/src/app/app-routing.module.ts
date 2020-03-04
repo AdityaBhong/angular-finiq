@@ -39,7 +39,9 @@ const appRoutes:Routes=[
     }
   ]
   },
- 
+ {path:"lazy",
+ loadChildren:"./modules/lazy/lazy.module#LazyModule"
+},
   {path: '**',component:PageNotFoundComponent}
 ];
 
